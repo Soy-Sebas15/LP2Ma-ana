@@ -6,58 +6,74 @@ import Dao.ClienteImp;
 import Modelo.TblCliente;
 
 public class TestTblCliente {
-
 	public static void main(String[] args) {
-		//realizamos la respectiva instancia...
-		TblCliente cliente=new TblCliente();
-        ClienteImp climp=new ClienteImp();
-        //asignamos valores
-        /*cliente.setNomcliente("Cristiando");
-        cliente.setApecliente("ronaldo");
-        cliente.setDnicliente("4563789");
-        cliente.setEmailcliente("cristiano@gmail.com");
-        cliente.setSexcliente("m");
-        cliente.setNacioncliente("portugues");
-        cliente.setTelfcliente("3814675");
-        //invocamos al metodo
-        climp.RegistrarCliente(cliente);
-        System.out.println("Dato registrado en BD") ;*/
-        //*****testeando el metodo actualizar..
-             //actualizando el codigo nro. 2
-        /*cliente.setIdcliente(2);
-       cliente.setNomcliente("leo");
-        cliente.setApecliente("messi");
-        cliente.setDnicliente("55555");
-        cliente.setEmailcliente("leo@gmail.com");
-        cliente.setSexcliente("m");
-        cliente.setTelfcliente("35555");
-        cliente.setNacioncliente("Argentina");
-         //invocamos el metodo actualizar
-        climp.ActualizarCliente(cliente);
-        //mensaje
-        System.out.println("dato actualizado en la bd");*/
-        
-        //****testeando el metodo eliminar...
-     /*      //codigo a eliminar...
-        cliente.setIdcliente(2);
-        //imprimir mensaje
-        System.out.println("dato eliminado de la BD");
-        */
-        
-        //testear el listado
-        List<TblCliente> listado=climp.ListarCliente();
-        //aplicamos un bucle for
-        for(TblCliente lis:listado){
-        	//imprimimos por pantalla
-        	System.out.println("codigo "+lis.getIdcliente()+
-        			" nombre "+lis.getNomcliente()+
-        			" apellido "+lis.getApecliente()+
-        			" dni "+lis.getDnicliente()+
-        			" nacionalidad "+lis.getNacioncliente()+
-        			" email "+lis.getEmailcliente()+
-        			" telefono "+lis.getTelfcliente()+
-        			" sexo "+lis.getSexcliente());
-        } //fin del bucle for...
-	} //fin del metodo principal.....
+		// realizamos la respectiva instancia...
+		TblCliente cliente = new TblCliente();
+		ClienteImp climp = new ClienteImp();
+		// asignamos valores
+		/*
+		 * cliente.setNomCliente("Andy");
+		 * cliente.setApeCliente("Munguia");
+		 * cliente.setDniCliente("69260412");
+		 * cliente.setEmailCliente("andyson@gmail.com");
+		 * cliente.setSexCliente("m");
+		 * cliente.setNacionCliente("peru");
+		 * cliente.setTelfCliente("926012963");
+		 */
+		// invocamos al metodo
 
-} //fin de la clase...
+		/*
+		 * climp.RegistrarCliente(cliente);
+		 * 
+		 * System.out.println("Se registró a " + cliente);
+		 */
+
+		// testeando la actualización
+
+		// Actualizando el código 3
+
+		/*
+		 * cliente.setIdCliente(3);
+		 * cliente.setNomCliente("Misael");
+		 * cliente.setApeCliente("Cumapa");
+		 * cliente.setDniCliente("896206124"); 
+		 * cliente.setEmailCliente("cumapaelmapa@gmail.com");
+		 * cliente.setSexCliente("m");
+		 * cliente.setTelfCliente("987059169");
+		 * cliente.setNacionCliente("peruano");
+		 * //invocamos al actualizar
+		 * climp.ActualizarCliente(cliente);
+		 * System.out.println("Si se actualizó we");
+		// testeando el eliminar
+		 * cliente.setIdCliente(3);
+		 * 
+		 * climp.EliminarCliente(cliente);
+		 * 
+		 * System.out.println("se eliminó");
+		 */
+		// testear el buscadotado
+
+		/*
+		 * buscadot<TblCliente> buscadotado = climp.buscadotarCliente();
+		 * for(TblCliente buscado:buscadotado)
+		 * 
+		 * { System.out.println("codigo" + buscado.getIdCliente()+" nombre " +
+		 * buscado.getNomCliente() + " apellido " + buscado.getApeCliente() +
+		 * " dni " + buscado.getDniCliente()
+		 * 
+		 * + " nacionalidad " + buscado.getNacionCliente() + " sexo " +
+		 * buscado.getSexCliente() + " email " + buscado.getEmailCliente() +
+		 * " telefono " + buscado.getTelfCliente());
+		 * 
+		 * }
+		 */
+		cliente.setIdcliente(2);
+		
+		TblCliente buscado = climp.BuscarCliente(cliente);
+		System.out.println("codigo" + buscado.getIdcliente() + " nombre " + 
+		buscado.getNomcliente() + " apellido "
+		+ buscado.getApecliente() + " dni " + buscado.getDnicliente()
+        + " nacionalidad " + buscado.getNacioncliente() + " sexo " + buscado.getSexcliente() 
+        + " email "+ buscado.getEmailcliente() + " telefono " + buscado.getTelfcliente());
+	}
+}
